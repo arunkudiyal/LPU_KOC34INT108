@@ -335,17 +335,17 @@ person = {
 
 # Q -> If in the dict, you have a age then display the age else add a new age of 50
 
-if "age" in person:
-    print('Yes, age is a key of the dict & the age is', person.get("age"))
-    # Remove a value / key from the dict.
-    person.pop("age")
-    print(person)
-else:
-    print('No, age is a not key of the dict')
-    age = int(input('Enter the age to insert in the dictonary - '))
-    # person.setdefault("age")
-    # person.update( {"age": age} )
+# if "age" in person:
+#     print('Yes, age is a key of the dict & the age is', person.get("age"))
+#     # Remove a value / key from the dict.
+#     person.pop("age")
+#     print(person)
+# else:
+#     print('No, age is a not key of the dict')
+#     age = int(input('Enter the age to insert in the dictonary - '))
+#     # person.setdefault("age")
+#     # person.update( {"age": age} )
 
-    # Add a new key with a default item
-    person.setdefault("age", age)
-    print(person)
+#     # Add a new key with a default item
+#     person.setdefault("age", age)
+#     print(person)
