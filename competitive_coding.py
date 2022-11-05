@@ -53,9 +53,9 @@
 # 1     1   1
 
 # Bitwise AND
-val1 = 4
-val2 = 7
-print('The Bitwise AND of', val1, 'and', val2, 'is: ',  val1 & val2)
+# val1 = 4
+# val2 = 7
+# print('The Bitwise AND of', val1, 'and', val2, 'is: ',  val1 & val2)
 
 # binary(val1) -> 0 1 0 0
 #                   AND
@@ -74,9 +74,9 @@ print('The Bitwise AND of', val1, 'and', val2, 'is: ',  val1 & val2)
 # 1     1   1
 
 # Bitwise OR
-val3 = 15
-val4 = 12
-print('The Bitwise OR of', val3, 'and', val4, 'is: ', val3 | val4)
+# val3 = 15
+# val4 = 12
+# print('The Bitwise OR of', val3, 'and', val4, 'is: ', val3 | val4)
 
 # binary(val3) -> 1 1 1 1
 # binary(val4) -> 1 1 0 0
@@ -89,8 +89,8 @@ print('The Bitwise OR of', val3, 'and', val4, 'is: ', val3 | val4)
 # 1     0
 
 # Bitwise NOT
-val5 = 9
-print('The Bitwise NOT of', val5, 'is', ~val5)
+# val5 = 9
+# print('The Bitwise NOT of', val5, 'is', ~val5)
 # binary(val5) -> 1 0 0 1
 #                   NOT         -> - (binary + 1)
 #                 (1 0 0 1)
@@ -105,11 +105,78 @@ print('The Bitwise NOT of', val5, 'is', ~val5)
 # 1     1   0
 
 # Bitwise XOR
-val6 = 14
-val7 = 13
-print('The Bitwise XOR of', val6, 'and', val7, 'is:', val6 ^ val7)
+# val6 = 14
+# val7 = 13
+# print('The Bitwise XOR of', val6, 'and', val7, 'is:', val6 ^ val7)
 
 # binary(val6) -> 1 1 1 0
 # binary(val7) -> 1 1 0 1
 #                   XOR
 #                  0 0 1 1      -> decimal -> 3 
+
+
+# 16 8 4 2 1
+#  1 1 0 0 0 -> 24
+#  1 1 0 0 1 -> 25
+
+# num = 5.0056789
+# print("The number is - ", num)
+# print("Number is %2d" %(num))       # 2d -> Integer
+# import datetime
+
+# name = 'Python'
+# progg = 'Programming'
+
+# print(name, "is a beautiful", progg, "language")
+# print(f"{name} is a beautiful {progg} language")
+
+# today = datetime.datetime.today()
+# print(today)
+
+# myStr = "This is {} and I am {} years old".format("Arun Kudiyal", 25)
+# print(myStr)
+
+# myStr = "I am {:>10} years old".format(20)
+# myStr = "I am {:<10} years old".format(20)
+# print(myStr)
+
+
+# Breaks in Python
+# myList = [2, 7, 19, 12, -5, -8, 13, 9 , 15]
+# for val in myList:
+#     if(val >= 0):
+#         print(val, end=" ")
+#     else:
+#         break
+
+# Q -> Count the number of alphabets in a name util you find a vowel
+# name = input("Enter a name - ")
+# vowels = ['A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u']
+# counter = 0
+# for alphabet in name:
+#     if(alphabet not in vowels):
+#         counter += 1
+#     else:
+#         break
+
+# print('No of alphabets before vowels are - ', counter)
+
+
+# datetime
+# import datetime
+
+# date = datetime.datetime.now()
+
+# print("Today is", date.strftime("%d"), date.strftime("%B"), datetime.datetime.now().year )
+
+# print("Today is", date.strftime("%a"), date.strftime("%d"), date.strftime("%b"), datetime.datetime.now().year )
+
+# ARMSTRONG NUMBERS 
+# number -> abcde
+# digits = 5
+# a^5 + b^5 + c^5 + d^5 + e^5 = numbers
+
+# number = 1634
+# digits = 4
+# 1^4 + 6^4 + 3^4 + 4^4 = number
+# 1 +  1294 + 81 + 256 = 1634
