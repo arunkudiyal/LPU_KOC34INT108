@@ -180,3 +180,33 @@
 # digits = 4
 # 1^4 + 6^4 + 3^4 + 4^4 = number
 # 1 +  1294 + 81 + 256 = 1634
+
+# print( range(100) ) # Always starts from number 0, but the end is exclusive
+# for variable in range(10):
+#     print(variable)
+
+# Q -> Print the table of the given number
+# number = int(input('Enter a number - '))
+# for table_number in range(number, (number*10) + 1, number):
+#     print(table_number) 
+
+# Q -> you are given a range, print all the prime numbers in the given range
+lower_range = int(input("Enter the lower range - "))
+upper_range = int(input("Enter the upper range - "))
+prime_numbers = set()
+# number = 1 - 9
+# number = 1, 2, , 4, 5, 6, 7, 8, 9
+for number in range(lower_range, upper_range):
+    if(number > 1):
+        # variable = 2 - 3
+        # variable = 2 
+        for variable in range(2, number):
+            # print(variable, end="--")
+            if(number % variable == 0):
+                break
+        else:
+            prime_numbers.add(number)
+
+for var in prime_numbers:
+    print(var, end=" ")
+print("\n")
