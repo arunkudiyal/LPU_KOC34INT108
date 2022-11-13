@@ -191,22 +191,128 @@
 #     print(table_number) 
 
 # Q -> you are given a range, print all the prime numbers in the given range
-lower_range = int(input("Enter the lower range - "))
-upper_range = int(input("Enter the upper range - "))
-prime_numbers = set()
-# number = 1 - 9
-# number = 1, 2, , 4, 5, 6, 7, 8, 9
-for number in range(lower_range, upper_range):
-    if(number > 1):
-        # variable = 2 - 3
-        # variable = 2 
-        for variable in range(2, number):
-            # print(variable, end="--")
-            if(number % variable == 0):
-                break
-        else:
-            prime_numbers.add(number)
+# lower_range = int(input("Enter the lower range - "))
+# upper_range = int(input("Enter the upper range - "))
+# prime_numbers = set()
+# # number = 1 - 9
+# # number = 1, 2, , 4, 5, 6, 7, 8, 9
+# for number in range(lower_range, upper_range):
+#     if(number > 1):
+#         # variable = 2 - 3
+#         # variable = 2 
+#         for variable in range(2, number):
+#             # print(variable, end="--")
+#             if(number % variable == 0):
+#                 break
+#         else:
+#             prime_numbers.add(number)
 
-for var in prime_numbers:
-    print(var, end=" ")
-print("\n")
+# for var in prime_numbers:
+#     print(var, end=" ")
+# print("\n")
+
+
+# for Loop
+# PATTERN PRINTING
+
+# Q -> Write a python code to print the following pattern based on a given input 'n'
+# n = 3
+# *
+# * *
+# * * *
+
+# n = 4
+# *
+# * *
+# * * *
+# * * * *
+
+# n = 5
+# *
+# * *
+# * * *
+# * * * *
+# * * * * *
+
+# # Step 1 -> finding the no of rows and no of cols
+# n = int(input('Enter the value of n - '))
+# # Step 2 -> Identify the steps of rows in the pattern
+# # row -> 1, 2, 3
+# for row in range(1, n+1):
+#     # Step 3 -> Idnetify the steps of cols in the pattern
+#     # col -> 1, 2, 3
+#     for col in range(1, row+1):
+#         print("*", end=" ")
+#     print("\n")
+
+
+# Q -> Write a python code to print the following pattern based on a given input 'n'
+# n = 5
+# * * * * *
+# * * * *
+# * * *
+# * *
+# *
+
+# Step 1 - n(rows) = n; n(cols) = n
+# n = int(input("Enter the input  n - "))
+# for row in range(1, n+1):
+#     for col in range(row, n+1):
+#         print("*", end=" ")
+#     print("\n")
+
+
+# Q -> Write a python code to print the following pattern based on a given input 'n'
+# n = 5
+#     *
+#    * *
+#   * * *
+#  * * * *
+# * * * * *
+
+# n(Rows) = 5, n(Cols) = 5
+# N(spaces) -> row = 0; spaces = 4; stars = 1
+# N(spaces) -> row = 1; spaces = 3; stars = 2
+# N(spaces) -> row = 2; spaces = 2; stars = 3
+# N(spaces) -> row = 3; spaces = 1; stars = 4
+# N(spaces) -> row = 4; spaces = 0; stars = 5
+# n = int(input('Enter the value of n - '))
+# # number of spaces
+# space = n - 1
+# # n = 5; row = 0, 1, 2, 3, 4
+# # 0, space = 4 -> 3
+# # 1, space = 3 -> 2
+# # 2, space = 2 -> 1
+# # 3, space = 1 -> 0
+# # 4, space = 0 -> -1
+
+# for row in range(0, n):
+#     # SPACE
+#     for variable in range(0, space):
+#         print(end=" ")
+#     space = space - 1
+
+#     # STARS
+#     for col in range(0, row+1):
+#         print("* ", end="")
+#     print("\r")
+
+# for i in range(0, 1):
+#     print(i)
+
+
+# Q -> Write a python code to print the following pattern based on a given input 'n'
+# n = 5
+#     1
+#    1 2
+#   1 2 3
+#  1 2 3 4
+# 1 2 3 4 5
+
+# Q -> Write a python code to print the following pattern based on a given input 'n'
+# n = 5
+#     1
+#    2 3
+#   4 5 6
+#  7 8 9 10
+# 11 12 13 14 15
