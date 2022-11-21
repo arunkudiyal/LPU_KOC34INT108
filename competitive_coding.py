@@ -380,18 +380,54 @@
 #     print('Hey, its odd!')
 
 # Default Arguments / Default Parametres
-def sayMyName(firstName: str = "Demo", lastName: str = "Text") -> str:
-    fullName = f"{firstName} {lastName}"
-    return fullName
+# def sayMyName(firstName: str = "Demo", lastName: str = "Text") -> str:
+#     fullName = f"{firstName} {lastName}"
+#     return fullName
 
-name1 = sayMyName("Python", "Programming")
-name2 = sayMyName()
-name3 = sayMyName("Hello")
+# name1 = sayMyName("Python", "Programming")
+# name2 = sayMyName()
+# name3 = sayMyName("Hello")
 
-print(name1)
-print(name2)
-print(name3)
+# print(name1)
+# print(name2)
+# print(name3)
 
 # KEYBOARD ARGUMENTS
+# Variable Length Argument
+# def someFunction(*args):
+#     for val in args:
+#         print(val)
+# someFunction("Hello", "I", "am", "Python")
+# someFunction("Hello", "I", "am", "Python", "this", "is", "an")
+# someFunction("Hello", "I", "am", "Python", "this", "is", "an", "example")
+
+# DOC-STRING in Python
+# def calculateSquare(num: int) -> int:
+#     ''' This is an utility function which returns the sqaure of the given number '''
+#     return num * num
+
+# print(calculateSquare.__doc__)
+
+# Q:- WHAT IS THE DIFFENCE BETWEEN FUNCTIONS & ANYONOUMS FUNCTIONS
+# def getSquare(num: int) -> int : return num * num
+# # if i have a function whose definiation can be consluded in one line, you can make that function anoynomous
+# getCube = lambda num2 : num2 * num2 * num2
+
+# print(getSquare(5))
+# print(getCube(7))
+
+
+# Differnce b/w actual parameters and refence parameters
+def changeList(myList: list) -> list:
+    myList.append("/0")
+    return myList
+
+sampleList = [100, 150, 200, 250, 300]
+print(sampleList)
+
+updatedList = changeList(sampleList)
+print(updatedList)
+
+print(sampleList)
 
 # RECURSION
