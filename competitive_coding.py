@@ -316,3 +316,82 @@
 #   4 5 6
 #  7 8 9 10
 # 11 12 13 14 15
+
+
+# FUNCTIONS IN PYTHON ->
+# A block of code to create and re-use any given logic
+
+# def functionName(arguments):
+# def functionName(parameters):
+
+#   Function Body
+
+# Q -> You are given with 2 numbers, add two numbers and print the sum - 
+# def calculateSum(num1, num2):
+#     sum = num1 + num2
+#     print('The sum of', num1, 'and', num2, "is ", sum)
+
+# return statemnents
+# def calculateSum(num1, num2):
+#     sum = num1 + num2
+#     return sum
+
+# # Calling the function
+# # calculateSum(10, 60)
+# # calculateSum(20, 50)
+# # calculateSum(30, 40)
+
+# # Q -> you are given with two numbers, sum the nos and square the result
+# n1 = int(input('Enter a number - '))
+# n2 = int(input('Enter a number - '))
+
+# result = calculateSum(n1, n2)
+# print('Square of', result, 'is', result * result)
+
+# Return Types
+# def funcName(para1: type1, para2: type2, ... ) -> returnType:
+# def calculateSum(num1: int, num2: int) -> int:
+#     sum = num1 + num2
+#     return sum
+
+# ans1 = calculateSum(10, 20)
+# ans2 = calculateSum(101, 202)
+# ans3 = calculateSum(True, 'Hello')
+
+# print(ans1, ans2, ans3)
+
+# Q -> Create a function which takes a number and it returns true if its even and false if odd
+# def isEven(number: int) -> bool:
+#     if(number % 2 == 0):
+#         return True
+#     else:
+#         return False
+
+# ans1 = isEven(4)
+# if(ans1 == True):
+#     print('Hey, its even!')
+# else:
+#     print('Hey, its odd!')
+
+# ans2 = isEven(5)
+# if(ans2 == True):
+#     print('Hey, its even!')
+# else:
+#     print('Hey, its odd!')
+
+# Default Arguments / Default Parametres
+def sayMyName(firstName: str = "Demo", lastName: str = "Text") -> str:
+    fullName = f"{firstName} {lastName}"
+    return fullName
+
+name1 = sayMyName("Python", "Programming")
+name2 = sayMyName()
+name3 = sayMyName("Hello")
+
+print(name1)
+print(name2)
+print(name3)
+
+# KEYBOARD ARGUMENTS
+
+# RECURSION
