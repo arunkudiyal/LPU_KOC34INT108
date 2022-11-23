@@ -418,16 +418,48 @@
 
 
 # Differnce b/w actual parameters and refence parameters
-def changeList(myList: list) -> list:
-    myList.append("/0")
-    return myList
+# def changeList(myList: list) -> list:
+#     myList.append("/0")
+#     return myList
 
-sampleList = [100, 150, 200, 250, 300]
-print(sampleList)
+# sampleList = [100, 150, 200, 250, 300]
+# # MemLoc(sampleList) = #Ab0DCF
+# print(sampleList)
 
-updatedList = changeList(sampleList)
-print(updatedList)
+# updatedList = changeList(sampleList)
+# # changeLIst([])
+# # changeList(#Ab0DCF)
+# print(updatedList)
 
-print(sampleList)
+# print(sampleList)
 
-# RECURSION
+# RECURSION -> Concept of function where a given functon calls itself.
+
+# Fib Series -> 0 1 1 2 3 5 8 13 ....
+# n = 4
+# fib(1) = 0
+# fib(2) = 1
+
+# fib(3) = fib(1) + fib(2)
+# fib(4) = fib(2) + fib(3)
+
+# Q -> Print fib series upto nth term
+def fib_series(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib_series(n-1) + fib_series(n-2)
+
+terms = int(input('Enter the number of terms - '))
+if terms < 0:
+    print("Enter a +ve value")
+else:
+    for i in range(0, terms):
+        print(fib_series(i))
+
+# fib_series(8)
+# fib_series(10)
+# fib_series(12)
+# fib_series(5)
