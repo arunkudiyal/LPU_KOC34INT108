@@ -413,6 +413,11 @@
 # # if i have a function whose definiation can be consluded in one line, you can make that function anoynomous
 # getCube = lambda num2 : num2 * num2 * num2
 
+# n1 = int(input('enter a value : '))
+# n2 = int(input('enter a value : '))
+# findSum = lambda n1, n2: n1 + n2
+# print(findSum(10, 20))
+
 # print(getSquare(5))
 # print(getCube(7))
 
@@ -433,33 +438,54 @@
 
 # print(sampleList)
 
-# RECURSION -> Concept of function where a given functon calls itself.
 
-# Fib Series -> 0 1 1 2 3 5 8 13 ....
-# n = 4
-# fib(1) = 0
-# fib(2) = 1
+# RECURSION -> 
+# A process where you call the same function in the body for the repeated process of calculation
 
-# fib(3) = fib(1) + fib(2)
-# fib(4) = fib(2) + fib(3)
+# Q :- given a number, find the sum of all the n natural numbers
+# n * (n + 1) / 2
+# n = 5 --> 5 + 4 + 3 + 2 + 1 = 15
+# n = 5 --> 5 + sum(...4)
+#       --> 5 + 4 + sum(...3)
+#       ---> 5 + 4 + 3 + sum(...2)
 
-# Q -> Print fib series upto nth term
-def fib_series(n):
-    if n == 0:
-        return 0
-    elif n == 1:
-        return 1
-    else:
-        return fib_series(n-1) + fib_series(n-2)
+# def sumOfNatNums(num):
+#     # BASE CONDITION
+#     if(num == 1):
+#         return 1
+#     return num + sumOfNatNums(num - 1)
 
-terms = int(input('Enter the number of terms - '))
-if terms < 0:
-    print("Enter a +ve value")
-else:
-    for i in range(0, terms):
-        print(fib_series(i))
+# n = 5
+# sum(5)
+# 1st Itr --> sum(5) --> 5 + 10 --> 15
+# 2nd Itr --> sum(4) --> 4 + 6 --> 10
+# 3rd Itr --> sum(3) --> 3 + 3 --> 6
+# 4th Itr --> sum(2) --> 2 + sum(1) --> 2 + 1 --> 3
+# .
+# .
+# .
+# -ve Infinte
 
-# fib_series(8)
-# fib_series(10)
-# fib_series(12)
-# fib_series(5)
+# ans1 = sumOfNatNums(5)
+# print(ans1)
+
+
+# Q :- WAP to get the factorial of a given number
+# def factorial(num):
+#     # Base Condition
+#     if(num == 0):
+#         return 1
+#     return num * factorial(num - 1)
+
+# fact1 = factorial(6)
+# print(fact1)
+
+
+# Q :- To print a Fibonacci series upto n terms 
+# fib(2) -> 0 1
+# fib(5) -> 0 1 1 2 3
+#fib(10) -> 0 1 1 2 3 5 8 13 21 34
+
+def fib_series(terms):
+    # Base Condition
+    
