@@ -484,8 +484,32 @@
 # Q :- To print a Fibonacci series upto n terms 
 # fib(2) -> 0 1
 # fib(5) -> 0 1 1 2 3
-#fib(10) -> 0 1 1 2 3 5 8 13 21 34
+# fib(10) -> 0 1 1 2 3 5 8 13 21 34
 
-def fib_series(terms):
+# fib(1) = 0
+# fib(2) = 1 
+# fib(3) = 1
+# fib(4) = 2
+# fib(10) = 34
+# .
+# .
+# fib(n) = fib(n-1) + fib(n-2)
+
+# Giving each fib number at a given term -> o/p
+def fib_series(term):
     # Base Condition
-    
+    if(term == 1):
+        return 0
+    elif(term == 2):
+        return 1
+    else:
+        return( fib_series(term-1) + fib_series(term-2) )
+
+# Printing the whole series
+n = int(input('enter a number - '))
+if n <= 0:
+    print('enter a non-zero, +ve number')
+else:
+    for value in range(1, n+1):
+        print(fib_series(value), end=" ")
+    print("\n")
