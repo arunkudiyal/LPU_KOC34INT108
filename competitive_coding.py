@@ -503,6 +503,8 @@ def fib_series(term):
     elif(term == 2):
         return 1
     else:
+        # check if the value exist in the dict or not
+        # if(value exist in the dic)
         return( fib_series(term-1) + fib_series(term-2) )
 
 # Printing the whole series
@@ -513,3 +515,25 @@ else:
     for value in range(1, n+1):
         print(fib_series(value), end=" ")
     print("\n")
+
+
+# EXPLAINATION
+# n = 6
+# value = 1, 2, 3, 4, 5, 6 | value = 5
+# dict = { 1: 0, 2: 1, 3: 1, 4: 2, 5: 3, 6: 5 }
+# O/P -> 0 1 1 2 3
+
+# value = 1
+# fib(1) -> 0
+
+# value = 2
+# fib(2) -> 1
+
+# value = 3
+# fib(3) -> fib(2) + fib(1) -> 1 + 0 -> 1
+
+# value = 4
+# fib(4) -> fib(3) + fib(2) -> fib(2) + fib(1) + fib(2) -> 1 + 0 + 1 -> 2
+
+# value = 5
+# fib(5) -> fib(4) + fib(3) -> fib(3) + fib(2) + fib(3) -> fib(2) + fib(1) + fib(2) + fib(3) -> 1 + 0 + 1 + fib(3) -> 1 + 0 + 1 + fib(2) + fib(1) -> 1 + 0 + 1 + 1 + 0 -> 3
