@@ -575,3 +575,60 @@
 
 
 # MATH MODULE 
+
+import math
+
+# Q:- Find out the area of the circle
+# PI = 3.14
+
+# MATH CONSTANTS
+
+# newPI = math.pi
+# radius = int(input('enter a +ve radius - '))
+# print( PI * radius * radius )
+# print( newPI * radius * radius )
+
+# print( math.tau )
+# print(math.e)
+# print(math.inf)
+# print(-math.inf)
+
+# MATH METHODS
+
+# 1. isInf()
+# math.isinf(0 / 0)
+
+# 2. ceil() , floor()
+# n = 2.5
+# print( math.ceil(n) )
+# print( math.floor(n) )
+
+# 3. factorial(n)
+# n = 5   # 120
+# print( math.factorial(n) )
+
+# 4. gcd()
+# n1 = 16
+# n2 = 8
+# print( math.gcd(n1, n2) )
+
+# Absolute values -> fabs() -> float
+# num = -10
+# print(math.fabs(num))
+
+# # Logarithmc Functions -> e^x | e^y
+# x = 10
+# print('e^x is - ', math.e**x)
+
+# a = 10  # log10 # loge
+# print(math.log(a))
+# print(math.log2(a))
+# print(math.log10(a))
+
+# Square Roots
+# n = 25  # float
+# print( math.sqrt(n) )
+
+# Trignomeritic Expression
+# a = 25
+# print( math.sin(a) )
