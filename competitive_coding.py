@@ -496,25 +496,25 @@
 # fib(n) = fib(n-1) + fib(n-2)
 
 # Giving each fib number at a given term -> o/p
-def fib_series(term):
-    # Base Condition
-    if(term == 1):
-        return 0
-    elif(term == 2):
-        return 1
-    else:
-        # check if the value exist in the dict or not
-        # if(value exist in the dic)
-        return( fib_series(term-1) + fib_series(term-2) )
+# def fib_series(term):
+#     # Base Condition
+#     if(term == 1):
+#         return 0
+#     elif(term == 2):
+#         return 1
+#     else:
+#         # check if the value exist in the dict or not
+#         # if(value exist in the dic)
+#         return( fib_series(term-1) + fib_series(term-2) )
 
-# Printing the whole series
-n = int(input('enter a number - '))
-if n <= 0:
-    print('enter a non-zero, +ve number')
-else:
-    for value in range(1, n+1):
-        print(fib_series(value), end=" ")
-    print("\n")
+# # Printing the whole series
+# n = int(input('enter a number - '))
+# if n <= 0:
+#     print('enter a non-zero, +ve number')
+# else:
+#     for value in range(1, n+1):
+#         print(fib_series(value), end=" ")
+#     print("\n")
 
 
 # EXPLAINATION
@@ -537,3 +537,41 @@ else:
 
 # value = 5
 # fib(5) -> fib(4) + fib(3) -> fib(3) + fib(2) + fib(3) -> fib(2) + fib(1) + fib(2) + fib(3) -> 1 + 0 + 1 + fib(3) -> 1 + 0 + 1 + fib(2) + fib(1) -> 1 + 0 + 1 + 1 + 0 -> 3
+
+# Strong numbers
+# 145 = 1! + 4! + 5! = n -> STRONG
+
+# function finds the factorial of a given number -
+# def fact(n) -> int:
+#     # Recursion -> ?
+#     if n == 0:
+#         return 1
+#     return n * fact(n-1)
+
+# # function to find a string number -
+# def is_strong_number(n) -> bool:
+#     # convert the number into a string
+#     num = str(n)
+#     # temp variable to store the sum
+#     sum = 0
+
+#     for i in range(len(num)):
+#         sum += fact( int(num[i]) )
+    
+#     if sum == n:
+#         return True
+#     else:
+#         return False
+
+# # Main Code
+# n = int(input('enter any +ve number - '))
+# if n <= 0:
+#     print('Enter a non-zero, positive number')
+# else:
+#     for i in range(1, n+1):
+#         if is_strong_number(i):
+#             print(i, end=" ")
+#     print('\n')
+
+
+# MATH MODULE 
