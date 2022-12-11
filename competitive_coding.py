@@ -576,7 +576,7 @@
 
 # MATH MODULE 
 
-import math
+# import math
 
 # Q:- Find out the area of the circle
 # PI = 3.14
@@ -632,3 +632,74 @@ import math
 # Trignomeritic Expression
 # a = 25
 # print( math.sin(a) )
+
+
+# TOWER OF HANOI - TOH
+
+# n(Towers) = 3 | A, B, C
+# n(Disc) = n
+
+# Objective - Take n discs from A and place them in C with the help of an aux rod called B
+
+# Constraints -
+# 1. Move one disc at a time
+# 2. Move -> Take the topmost disc, and place it either on a empty rod or an another stack
+# 3. No disc will be placed above a disc which is smaller than it.
+
+# Explaination :-
+
+# n = 1 | D1
+# D1 -> A --> C
+# Total of Step = n = 1; steps = 1
+
+# n = 2 | D1 & D2 - D1 -> Smaller; D2 -> Larger
+# D1 -> A --> B
+# [C -> empty, A -> largest, stack was created in B]
+# D2 -> A --> C
+# D1 -> B --> C
+# Total of Step = n = 2; steps = 3
+
+# n = 3
+# D1 -> A --> C
+# D2 -> A --> B
+# D1 -> C --> B
+# [C -> empty, A -> largest, stack was created in B]
+# D3 -> A --> C
+# [ n(A) = 0, n(B) = 2, n(C) = 1 ]
+# D1 -> B --> A
+# [ A --> Smallest, B --> Second Largest, C --> Largest Disc ]
+# D2 --> B --> C
+# D1 --> A --> C
+# Total of Step = n = 3; steps = 7
+
+# n = 4; steps = 15
+
+# [ Formula -> n; steps -> 2^n - 1 ]
+
+def tower_of_hanoi(n, start_rod, aux_rod, end_rod):
+    # BASE CASE :-
+    if n == 1:
+        print('Move disc 1 from {} to {}'.format(start_rod, end_rod))
+        return
+
+    # Plan A:-
+    # Find the largest disc, and place it from A to C
+    # --> C is will be empty
+    # --> A will have the largest disc
+    # --> Intermediate stack will be in B
+    tower_of_hanoi(n-1, start_rod, end_rod, aux_rod)
+    print('Move disc {} from {} to {}'.format(n, start_rod, end_rod))
+
+    # Plan - B:-
+    # --> Intermediate Stack at B -> C --> A is empty -> B -> C by using A as an aux
+    tower_of_hanoi(n-1, aux_rod, start_rod, end_rod)
+
+n = int( input('enter any positive number - ') )
+if n <= 0:
+    print('enter only +ve non-zeo number!')
+else:
+    tower_of_hanoi(n, 'A', 'B', 'C')
+
+# ASSIGNMENT ->
+# 1. Analysing the recursive calls
+# 2. Iterative solution alternative for the recursive code.
