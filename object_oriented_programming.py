@@ -138,6 +138,9 @@ class Person:
     def setAge(self, newAge):
         self.__age = newAge
 
+    def getPersonDetails(self):
+        return 'Hi, my name is {} and I am {} years old'.format(self.__name, self.__age)
+
 # class ChildClass(ParentClass):
 class Student(Person):
     def __init__(self, name, age, standard, rno, percentage):
@@ -152,12 +155,6 @@ class Student(Person):
     # --> Getter methods helps you read the data; Setter methods helps you to update the data
 
     # Getter
-    def getName(self):
-        return self.__name
-
-    def getAge(self):
-        return self.__age
-    
     def getStandard(self):
         return self.__standard
     
@@ -168,12 +165,6 @@ class Student(Person):
         return self.__percentage
 
     # Setter
-    def setName(self, newName):
-        self.__name = newName
-
-    def setAge(self, newAge):
-        self.__age = newAge
-    
     def setStandard(self, newStandard):
         self.__standard = newStandard
     
@@ -183,20 +174,23 @@ class Student(Person):
     def setPercentage(self, newPercentage):
         self.__percentage = newPercentage
 
-    def getStudentDetails(self):
-        return 'Hi, my name is {}, I am {} years old! I study in {}'.format(self.__name, self.__age, self.__standard)
-
     def getStudentsRecords(self):
-        return 'Hi, my name is {}, with roll no {}. I scored {} in {}'.format(self.__name, self.__rno, self.__percentage, self.__standard)
+        return 'Hi, my name is {} . I am {} years old, with roll no {}. I scored {} in {}'.format(super().getName(), super().getAge(), self.__rno, self.__percentage, self.__standard)
 
 
 # Objects
+# studentOne = Student("Anurag", 19, 'BTech - 1st year', '12217365', 92)
+# print( studentOne.getStudentDetails() )
+# studentOne.setName("Anurag Chauhan")
+# print( studentOne.getStudentsRecords() )
+# print('------------ x -------------')
+# studentOne = Student("Noya", 19, 'BTech - 1st year', '12217365', 95)
+# print( studentOne.getStudentDetails() )
+# studentOne.setName("Noya Lasheen")
+# print( studentOne.getStudentsRecords() )
+
 studentOne = Student("Anurag", 19, 'BTech - 1st year', '12217365', 92)
-print( studentOne.getStudentDetails() )
-studentOne.setName("Anurag Chauhan")
+print( studentOne.getPersonDetails() )
 print( studentOne.getStudentsRecords() )
-print('------------ x -------------')
-studentOne = Student("Noya", 19, 'BTech - 1st year', '12217365', 95)
-print( studentOne.getStudentDetails() )
-studentOne.setName("Noya Lasheen")
-print( studentOne.getStudentsRecords() )
+
+# Types of Inheritance -->
