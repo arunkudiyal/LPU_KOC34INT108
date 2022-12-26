@@ -121,76 +121,258 @@
 # 3. Polymorphism
 # 4. Inheritance --> A mechanism in which you can inherit(adapt) all the attributes and methods from one class (Parent) to another class (Child).
 
-class Person:
-    def __init__(self, name, age):
-        self.__name = name
-        self.__age = age
+# class Person:
+#     def __init__(self, name, age):
+#         self.__name = name
+#         self.__age = age
 
-    def getName(self):
-        return self.__name
+#     def getName(self):
+#         return self.__name
 
-    def getAge(self):
-        return self.__age
+#     def getAge(self):
+#         return self.__age
 
-    def setName(self, newName):
-        self.__name = newName
+#     def setName(self, newName):
+#         self.__name = newName
 
-    def setAge(self, newAge):
-        self.__age = newAge
+#     def setAge(self, newAge):
+#         self.__age = newAge
 
-    def getPersonDetails(self):
-        return 'Hi, my name is {} and I am {} years old'.format(self.__name, self.__age)
+#     def getPersonDetails(self):
+#         return 'Hi, my name is {} and I am {} years old'.format(self.__name, self.__age)
 
-# class ChildClass(ParentClass):
-class Student(Person):
-    def __init__(self, name, age, standard, rno, percentage):
-        # Parent Properties -> super().
-        super().__init__(name, age)
-        # Child Properties 
-        self.__standard = standard
-        self.__rno = rno
-        self.__percentage = percentage
+# # class ChildClass(ParentClass):
+# class Student(Person):
+#     def __init__(self, name, age, standard, rno, percentage):
+#         # Parent Properties -> super().
+#         super().__init__(name, age)
+#         # Child Properties 
+#         self.__standard = standard
+#         self.__rno = rno
+#         self.__percentage = percentage
 
-    # Getter & Setter Methods
-    # --> Getter methods helps you read the data; Setter methods helps you to update the data
+#     # Getter & Setter Methods
+#     # --> Getter methods helps you read the data; Setter methods helps you to update the data
 
-    # Getter
-    def getStandard(self):
-        return self.__standard
+#     # Getter
+#     def getStandard(self):
+#         return self.__standard
     
-    def getRno(self):
-        return self.__rno
+#     def getRno(self):
+#         return self.__rno
     
-    def getPercentage(self):
-        return self.__percentage
+#     def getPercentage(self):
+#         return self.__percentage
 
-    # Setter
-    def setStandard(self, newStandard):
-        self.__standard = newStandard
+#     # Setter
+#     def setStandard(self, newStandard):
+#         self.__standard = newStandard
     
-    def setRno(self, newRno):
-        self.__rno = newRno
+#     def setRno(self, newRno):
+#         self.__rno = newRno
     
-    def setPercentage(self, newPercentage):
-        self.__percentage = newPercentage
+#     def setPercentage(self, newPercentage):
+#         self.__percentage = newPercentage
 
-    def getStudentsRecords(self):
-        return 'Hi, my name is {} . I am {} years old, with roll no {}. I scored {} in {}'.format(super().getName(), super().getAge(), self.__rno, self.__percentage, self.__standard)
+#     def getStudentsRecords(self):
+#         return 'Hi, my name is {} . I am {} years old, with roll no {}. I scored {} in {}'.format(super().getName(), super().getAge(), self.__rno, self.__percentage, self.__standard)
 
 
-# Objects
+# # Objects
+# # studentOne = Student("Anurag", 19, 'BTech - 1st year', '12217365', 92)
+# # print( studentOne.getStudentDetails() )
+# # studentOne.setName("Anurag Chauhan")
+# # print( studentOne.getStudentsRecords() )
+# # print('------------ x -------------')
+# # studentOne = Student("Noya", 19, 'BTech - 1st year', '12217365', 95)
+# # print( studentOne.getStudentDetails() )
+# # studentOne.setName("Noya Lasheen")
+# # print( studentOne.getStudentsRecords() )
+
 # studentOne = Student("Anurag", 19, 'BTech - 1st year', '12217365', 92)
-# print( studentOne.getStudentDetails() )
-# studentOne.setName("Anurag Chauhan")
+# print( studentOne.getPersonDetails() )
 # print( studentOne.getStudentsRecords() )
-# print('------------ x -------------')
-# studentOne = Student("Noya", 19, 'BTech - 1st year', '12217365', 95)
-# print( studentOne.getStudentDetails() )
-# studentOne.setName("Noya Lasheen")
-# print( studentOne.getStudentsRecords() )
-
-studentOne = Student("Anurag", 19, 'BTech - 1st year', '12217365', 92)
-print( studentOne.getPersonDetails() )
-print( studentOne.getStudentsRecords() )
 
 # Types of Inheritance -->
+
+# Simple Inheritance
+# Parent Class
+# class A:
+#     def __init__(self, prop1, prop2):
+#         self.__prop1 = prop1
+#         self.__prop2 = prop2
+
+#     # Getter Methods --> Helper method which helps us access the private properties from the class (BUT not directly)
+#     def getProp1(self):
+#         return self.__prop1
+
+#     def getProp2(self):
+#         return self.__prop2
+
+# # Child Class
+# class B(A):
+#     def __init__(self, prop1, prop2, prop3, prop4):
+#         # Always call the parent constructor first before creating the new properties
+#         # super() --> helps you to access all the public properties & public methods from the parent class [CONSTRUCTOR INCLUDED]
+#         super().__init__(prop1, prop2)
+#         # define the new properties
+#         self.__prop3 = prop3
+#         self.__prop4 = prop4
+
+#     def getDetails(self):
+#         return 'Prop1 --> {}, Prop2 --> {}, Prop3 --> {}, Prop4 --> {}'.format( super().__prop1, super().__prop2, self.__prop3, self.__prop4 )
+
+
+# HIERACHICHAL INHERITANCE
+# # Parent Class - 1
+# class A:
+#     def __init__(self, prop1, prop2):
+#         self.__prop1 = prop1
+#         self.__prop2 = prop2
+
+#     # Getter Methods --> Helper method which helps us access the private properties from the class (BUT not directly)
+#     def getProp1(self):
+#         return self.__prop1
+
+#     def getProp2(self):
+#         return self.__prop2
+
+# # Parent Class - 2
+# # Child Class - 1
+# class B(A):
+#     def __init__(self, prop1, prop2, prop3, prop4):
+#         # Always call the parent constructor first before creating the new properties
+#         # super() --> helps you to access all the public properties & public methods from the parent class [CONSTRUCTOR INCLUDED]
+#         super().__init__(prop1, prop2)
+#         # define the new properties
+#         self.__prop3 = prop3
+#         self.__prop4 = prop4
+
+#     def getProp3(self):
+#         return self.__prop3
+
+#     def getProp4(self):
+#         return self.__prop4
+
+# # Child Class
+# class C(B):
+#     def __init__(self, prop1, prop2, prop3, prop4, prop5, prop6):
+#         super().__init__(prop1, prop2, prop3, prop4)
+#         self.__prop5 = prop5
+#         self.__prop6 = prop6
+
+#     def getDetails(self):
+#         return 'Prop1 --> {}, Prop2 --> {}, Prop3 --> {}, Prop4 --> {}, Prop5 --> {}, Prop6 --> {}'.format(super().getProp1(), super().getProp2(), super().getProp3(), super().getProp4(), self.__prop5, self.__prop6)
+
+# cObj = C(100, 150, 200, 250, 300, 360)
+# print( cObj.getDetails() )
+
+
+# MULTIPLE INHERITANCE
+
+# Parent Class - 1
+# class A:
+#     def __init__(self, prop1, prop2):
+#         self.__prop1 = prop1
+#         self.__prop2 = prop2
+
+#     # Getter Methods --> Helper method which helps us access the private properties from the class (BUT not directly)
+#     def getProp1(self):
+#         return self.__prop1
+
+#     def getProp2(self):
+#         return self.__prop2
+
+# # Parent Class - 2
+# class B:
+#     def __init__(self, prop3, prop4):
+#         # define the new properties
+#         self.__prop3 = prop3
+#         self.__prop4 = prop4
+
+#     def getProp3(self):
+#         return self.__prop3
+
+#     def getProp4(self):
+#         return self.__prop4
+
+# # Child Class
+# class C(B, A):
+#     def __init__(self, prop1, prop2, prop3, prop4, prop5, prop6):
+#         # Supposed to call the parent(s) constructor
+#         # nameOfTheParent.__init__(self)
+#         A.__init__(self, prop1, prop2)
+#         B.__init__(self, prop3, prop4)
+#         self.__prop5 = prop5
+#         self.__prop6 = prop6
+
+#     def getDetails(self):
+#         return 'Prop1 --> {}, Prop2 --> {}, Prop3 --> {}, Prop4 --> {}, Prop5 --> {}, Prop6 --> {}'.format(super().getProp1(), super().getProp2(), super().getProp3(), super().getProp4(), self.__prop5, self.__prop6)
+
+#     # def getDetails(self):
+#     #     return 'Prop1 --> {}, Prop2 --> {}, Prop5 --> {}, Prop6 --> {}'.format(super().getProp1(), super().getProp2(), self.__prop5, self.__prop6)
+
+# # Object
+# cObj = C(100, 200, 300, 400, 500, 600)
+# print( cObj.getDetails() )
+
+
+# HYBRID INHERITANCE
+class F:
+    def __init__(self, prop5, prop6):
+        self.__prop5 = prop5
+        self.__prop6 = prop6
+
+    def getProp5(self):
+        return self.__prop5
+
+    def getProp6(self):
+        return self.__prop6
+
+class E(F):
+    def __init__(self, prop5, prop6, prop7, prop8):
+        super().__init__(prop5, prop6)
+        self.__prop7 = prop7
+        self.__prop8 = prop8
+
+    def getProp7(self):
+        return self.__prop7
+
+    def getProp8(self):
+        return self.__prop8
+
+class B(F):
+    def __init__(self, prop5, prop6, prop0, prop00):
+        super().__init__(prop5, prop6)
+        self.__prop0 = prop0
+        self.__prop00 = prop00
+
+    def getProp0(self):
+        return self.__prop0
+
+    def getProp00(self):
+        return self.__prop00
+
+class A(B):
+    def __init__(self, prop5, prop6, prop0, prop00, prop1, prop2):
+        super().__init__(prop5, prop6, prop0, prop00)
+        self.__prop1 = prop1
+        self.__prop2 = prop2
+
+    def getProp1(self):
+        return self.__prop1
+
+    def getProp2(self):
+        return self.__prop2
+
+class C(B):
+    def __init__(self, prop5, prop6, prop0, prop00, prop3, prop4):
+        super().__init__(prop5, prop6, prop0, prop00)
+        self.__prop3 = prop3
+        self.__prop4 = prop4
+
+    def getProp3(self):
+        return self.__prop3
+
+    def getProp4(self):
+        return self.__prop4
