@@ -4,6 +4,7 @@
 # open methods returns a stream. A stream which consist of the refernce, and details related to the file (name='./demo.txt' mode='r' encoding='UTF-8')
 
 # mode ==> 'r'
+# fileRef = open('C:\Program_Files\myFile.txt', 'r', 'charset')
 # fileRef = open('./demo.txt', 'r')
 # print( fileRef )
 
@@ -27,6 +28,7 @@
 # fileRef = open('./demo2.txt', 'r')
 # print( fileRef.read() )
 
+# mode ==> 'a' --> It will write the data provided using the write() method. But re-execution will add more lines to the file.
 # fileRef = open('./demo2.txt', 'a')
 # fileRef.write('This is something new')
 # fileRef.close()
@@ -46,3 +48,57 @@
 #     print(animals)
 #     for word in animals:
 #         print(word)
+
+# READ MODE
+
+# fileRef = open('./demo.txt', 'r')
+# # print( fileRef.read() )
+
+# # myFileData = fileRef.readline()
+# myFileData = fileRef.read()
+# print(type(myFileData))
+
+
+# WRITE MODE
+# charList = [ 'This is Line - 1\n', 'This is Line - 2\n', 'This is Line - 3\n' ]
+
+# f = open('./demo2.txt', 'w')
+# # f.write('This is Line - 1.')
+# # f.write('\nThis is Line - 2.')
+
+# f.writelines(charList)
+
+
+# APPEND MODE 
+# charList = [ 'This is Line - 1\n', 'This is Line - 2\n', 'This is Line - 3\n' ]
+# f = open('./demo2.txt', 'a')
+# f.writelines(charList)
+
+
+# SYNTAX --> with open('location', 'mode') as f1
+
+# with open('./demo.txt', 'r') as f1:
+#     print(f1.read())
+
+# with open('./demo.txt', 'r') as f1, open('./demo2.txt', 'r') as f2:
+#     print('CONTENT OF FILE - 1 is - ')
+#     print(f1.read())
+#     print('\n')
+#     print('CONTENT OF FILE - 2 is - ')
+#     print(f2.read())
+
+
+# with open('./demo2.txt', 'r') as f1:
+#     myFileText = f1.readline()
+#     listOfAnimals = myFileText.split(', ')
+#     for animal in listOfAnimals:
+#         print(animal)
+
+
+# Q:- You are given with two text files (demo.txt & demo2.txt), you need to copy all the content from demo.txt to demo2.txt
+with open('./demo.txt', 'r') as file1, open('./demo2.txt', 'w') as file2:
+    contentOfFileOne = file1.read()
+    file2.write(contentOfFileOne)
+
+
+# SAMPLE QUESTIONS ON FILE HANDLING IN PYTHON
